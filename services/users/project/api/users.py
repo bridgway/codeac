@@ -42,7 +42,6 @@ def get_all_users():
     }
     return jsonify(response_object), 200
 
-
 @users_blueprint.route('/users/<user_id>', methods=['GET'])
 def get_single_user(user_id):
     """Get single user details"""
@@ -68,12 +67,11 @@ def get_single_user(user_id):
     except ValueError:
         return jsonify(response_object), 404
 
-
 @users_blueprint.route('/users', methods=['POST'])
 def add_user():
     post_data = request.get_json()
     response_object = {
-        'status': 'fail',
+        'status': 'fail', 
         'message': 'Invalid payload.'
     }
     if not post_data:
@@ -85,7 +83,7 @@ def add_user():
         if not user:
             db.session.add(User(username=username, email=email))
             db.session.commit()
-            response_object['status'] = 'success'
+            response_object['status'] = 'success' 
             response_object['message'] = f'{email} was added!'
             return jsonify(response_object), 201
         else:
