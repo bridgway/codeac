@@ -2,9 +2,7 @@
 
 
 from sqlalchemy import exc
-
 from flask import Blueprint, jsonify, request, render_template
-
 from project.api.models import User
 from project import db
 

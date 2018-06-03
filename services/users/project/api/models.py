@@ -16,9 +16,9 @@ class User(db.Model):
         self.email = email
 
     def to_json(self):
-    		return {
-    				'id': self.id,
-    				'username': self.username,
-    				'email': self.email,
-    				'active': self.active
-    		}
+            return {
+                    'id': self.id,
+                    'username': self.username,
+                    'email': self.email,
+                    'active': self.active
+            }
